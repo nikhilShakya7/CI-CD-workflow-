@@ -1,0 +1,28 @@
+{
+  "name": "qa-practice-store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "products-data.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:chromium": "playwright test --project=chromium",
+    "test:report": "playwright show-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikhilShakya7/CI-CD-workflow-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nikhilShakya7/CI-CD-workflow-/issues"
+  },
+  "homepage": "https://github.com/nikhilShakya7/CI-CD-workflow-#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.5.0"
+  }
+}
