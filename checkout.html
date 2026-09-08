@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - QA Practice Store</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="header-inner">
+        <a href="index.html" class="logo">QA Practice Store</a>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav id="main-nav">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+          <a href="login.html" id="auth-link">Login</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h2>Checkout</h2>
+
+      <div class="checkout-layout">
+        <div class="checkout-form-section">
+          <h3>Shipping Information</h3>
+          <form id="checkout-form">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input id="name" type="text" placeholder="John Doe" required />
+              <span class="error-message" id="name-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input
+                id="email"
+                type="email"
+                placeholder="john@example.com"
+                required
+              />
+              <span class="error-message" id="email-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input
+                id="phone"
+                type="tel"
+                placeholder="(555) 123-4567"
+              />
+              <span class="error-message" id="phone-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="address">Address *</label>
+              <input
+                id="address"
+                type="text"
+                placeholder="123 Main St"
+                required
+              />
+              <span class="error-message" id="address-error"></span>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="city">City *</label>
+                <input id="city" type="text" placeholder="New York" required />
+                <span class="error-message" id="city-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="zip">ZIP Code *</label>
+                <input id="zip" type="text" placeholder="10001" required />
+                <span class="error-message" id="zip-error"></span>
+              </div>
+            </div>
+
+            <h3>Payment (Demo Only)</h3>
+
+            <div class="form-group">
+              <label for="card-number">Card Number *</label>
+              <input
+                id="card-number"
+                type="text"
+                placeholder="4242 4242 4242 4242"
+                maxlength="19"
+                required
+              />
+              <span class="error-message" id="card-number-error"></span>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="card-expiry">Expiry *</label>
+                <input
+                  id="card-expiry"
+                  type="text"
+                  placeholder="MM/YY"
+                  maxlength="5"
+                  required
+                />
+                <span class="error-message" id="card-expiry-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="card-cvv">CVV *</label>
+                <input
+                  id="card-cvv"
+                  type="text"
+                  placeholder="123"
+                  maxlength="4"
+                  required
+                />
+                <span class="error-message" id="card-cvv-error"></span>
+              </div>
+            </div>
+
+            <button type="submit" class="button" id="place-order-btn">
+              Place Order
+            </button>
+          </form>
+        </div>
+
+        <div class="checkout-summary" id="checkout-summary">
+          <h3>Order Summary</h3>
+          <div id="checkout-items"></div>
+          <div class="cart-summary-row">
+            <span>Subtotal:</span>
+            <span>$<span id="checkout-subtotal">0</span></span>
+          </div>
+          <div class="cart-summary-row">
+            <span>Tax (10%):</span>
+            <span>$<span id="checkout-tax">0</span></span>
+          </div>
+          <div class="cart-summary-row cart-total-row">
+            <span>Total:</span>
+            <span>$<span id="checkout-total">0</span></span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="modal-overlay" id="confirmation-modal" style="display: none;">
+      <div class="modal">
+        <div class="modal-icon">&#10003;</div>
+        <h3>Order Confirmed!</h3>
+        <p id="modal-message">Your order has been placed successfully.</p>
+        <p id="modal-order-id"></p>
+        <a class="button" href="index.html">Continue Shopping</a>
+      </div>
+    </div>
+
+    <footer>
+      <p>QA Practice Store &copy; 2026</p>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="products-data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

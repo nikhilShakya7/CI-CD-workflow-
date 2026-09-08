@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - QA Practice Store</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="header-inner">
+        <a href="index.html" class="logo">QA Practice Store</a>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav id="main-nav">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+          <a href="login.html" id="auth-link">Login</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="auth-container">
+        <h2>Login</h2>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-email">Email</label>
+            <input
+              id="login-email"
+              type="email"
+              placeholder="john@example.com"
+              required
+            />
+            <span class="error-message" id="login-email-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input
+              id="login-password"
+              type="password"
+              placeholder="Enter your password"
+              required
+            />
+            <span class="error-message" id="login-password-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="remember-me" />
+              Remember me
+            </label>
+          </div>
+
+          <button type="submit" class="button">Login</button>
+        </form>
+
+        <p class="auth-switch">
+          Don't have an account? <a href="register.html">Register here</a>
+        </p>
+
+        <div class="demo-credentials">
+          <p><strong>Demo credentials:</strong></p>
+          <p>Email: test@test.com / Password: password123</p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>QA Practice Store &copy; 2026</p>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="products-data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

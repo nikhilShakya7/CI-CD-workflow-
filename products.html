@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products - QA Practice Store</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="header-inner">
+        <a href="index.html" class="logo">QA Practice Store</a>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav id="main-nav">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+          <a href="login.html" id="auth-link">Login</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h2>Products</h2>
+
+      <div class="search-filter-bar">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search products..."
+          aria-label="Search products"
+        />
+        <div class="category-filters" id="category-filters">
+          <button class="filter-btn active" data-category="all">All</button>
+        </div>
+        <div class="sort-control">
+          <label for="sort-select">Sort:</label>
+          <select id="sort-select">
+            <option value="default">Default</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name-asc">Name: A to Z</option>
+            <option value="name-desc">Name: Z to A</option>
+            <option value="rating-desc">Rating: High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <p id="results-count"></p>
+
+      <div class="products" id="products-grid"></div>
+
+      <p id="no-results" style="display: none;">No products found.</p>
+    </main>
+
+    <footer>
+      <p>QA Practice Store &copy; 2026</p>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="products-data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

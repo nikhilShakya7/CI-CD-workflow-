@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart - QA Practice Store</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="header-inner">
+        <a href="index.html" class="logo">QA Practice Store</a>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav id="main-nav">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+          <a href="login.html" id="auth-link">Login</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h2>Your Cart</h2>
+
+      <div id="cart-items"></div>
+
+      <div id="cart-summary" style="display: none;">
+        <div class="cart-summary-row">
+          <span>Subtotal:</span>
+          <span>$<span id="cart-subtotal">0</span></span>
+        </div>
+        <div class="cart-summary-row">
+          <span>Tax (10%):</span>
+          <span>$<span id="cart-tax">0</span></span>
+        </div>
+        <div class="cart-summary-row cart-total-row">
+          <span>Total:</span>
+          <span>$<span id="cart-total">0</span></span>
+        </div>
+        <div class="cart-actions">
+          <button class="button button-secondary" id="clear-cart-btn">
+            Clear Cart
+          </button>
+          <a class="button" href="checkout.html">Proceed to Checkout</a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>QA Practice Store &copy; 2026</p>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="products-data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product - QA Practice Store</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="header-inner">
+        <a href="index.html" class="logo">QA Practice Store</a>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav id="main-nav">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+          <a href="login.html" id="auth-link">Login</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div id="product-detail"></div>
+      <div id="product-not-found" style="display: none;">
+        <h2>Product Not Found</h2>
+        <p>The product you're looking for doesn't exist.</p>
+        <a class="button" href="products.html">Back to Products</a>
+      </div>
+    </main>
+
+    <footer>
+      <p>QA Practice Store &copy; 2026</p>
+    </footer>
+
+    <div id="toast-container"></div>
+    <script src="products-data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
