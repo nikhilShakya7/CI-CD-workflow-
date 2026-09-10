@@ -11,7 +11,7 @@ test.describe("Checkout", () => {
     checkoutPage,
   }) => {
     await checkoutPage.expectOrderSummaryItem(PRODUCTS.mouse.name);
-    await expect(checkoutPage.checkoutSubtotal).toHaveText("50.00");
+    await expect(checkoutPage.checkoutSubtotal).toHaveText("49.00");
     await expect(checkoutPage.checkoutTax).toHaveText("4.90");
     await expect(checkoutPage.checkoutTotal).toHaveText("53.90");
   });
