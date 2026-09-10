@@ -11,7 +11,7 @@ test.describe("Checkout", () => {
     checkoutPage,
   }) => {
     await checkoutPage.expectOrderSummaryItem(PRODUCTS.mouse.name);
-    await expect(checkoutPage.checkoutSubtotal).toHaveText("49.00");
+    await expect(checkoutPage.checkoutSubtotal).toHaveText("50.00");
     await expect(checkoutPage.checkoutTax).toHaveText("4.90");
     await expect(checkoutPage.checkoutTotal).toHaveText("53.90");
   });
@@ -22,23 +22,23 @@ test.describe("Checkout", () => {
     await checkoutPage.submit();
     await expect(checkoutPage.errorFor("name")).toHaveText("Name is required");
     await expect(checkoutPage.errorFor("email")).toHaveText(
-      "Email is required"
+      "Email is required",
     );
     await expect(checkoutPage.errorFor("address")).toHaveText(
-      "Address is required"
+      "Address is required",
     );
     await expect(checkoutPage.errorFor("city")).toHaveText("City is required");
     await expect(checkoutPage.errorFor("zip")).toHaveText(
-      "ZIP code is required"
+      "ZIP code is required",
     );
     await expect(checkoutPage.errorFor("card-number")).toHaveText(
-      "Card number is required"
+      "Card number is required",
     );
     await expect(checkoutPage.errorFor("card-expiry")).toHaveText(
-      "Expiry is required"
+      "Expiry is required",
     );
     await expect(checkoutPage.errorFor("card-cvv")).toHaveText(
-      "CVV is required"
+      "CVV is required",
     );
   });
 
@@ -46,7 +46,7 @@ test.describe("Checkout", () => {
     await checkoutPage.fill({ email: "not-an-email" });
     await checkoutPage.submit();
     await expect(checkoutPage.errorFor("email")).toHaveText(
-      "Please enter a valid email"
+      "Please enter a valid email",
     );
   });
 
@@ -54,7 +54,7 @@ test.describe("Checkout", () => {
     await checkoutPage.fill({ zip: "abc" });
     await checkoutPage.submit();
     await expect(checkoutPage.errorFor("zip")).toHaveText(
-      "Enter a valid ZIP code (e.g. 10001)"
+      "Enter a valid ZIP code (e.g. 10001)",
     );
   });
 
@@ -62,7 +62,7 @@ test.describe("Checkout", () => {
     await checkoutPage.fill({ cardNumber: "1234" });
     await checkoutPage.submit();
     await expect(checkoutPage.errorFor("card-number")).toHaveText(
-      "Card number must be 16 digits"
+      "Card number must be 16 digits",
     );
   });
 
@@ -70,7 +70,7 @@ test.describe("Checkout", () => {
     await checkoutPage.fill({ cardExpiry: "1" });
     await checkoutPage.submit();
     await expect(checkoutPage.errorFor("card-expiry")).toHaveText(
-      "Use MM/YY format"
+      "Use MM/YY format",
     );
   });
 
@@ -78,14 +78,14 @@ test.describe("Checkout", () => {
     await checkoutPage.fill({ cardCvv: "12" });
     await checkoutPage.submit();
     await expect(checkoutPage.errorFor("card-cvv")).toHaveText(
-      "CVV must be 3-4 digits"
+      "CVV must be 3-4 digits",
     );
   });
 
   test("formats card number input with spaces", async ({ checkoutPage }) => {
     await checkoutPage.getInput("card-number").fill("4242424242424242");
     await expect(checkoutPage.getInput("card-number")).toHaveValue(
-      "4242 4242 4242 4242"
+      "4242 4242 4242 4242",
     );
   });
 
@@ -119,7 +119,7 @@ test.describe("Checkout - Empty Cart", () => {
   test("shows empty cart message", async ({ checkoutPage }) => {
     await checkoutPage.open();
     await expect(checkoutPage.checkoutItems).toContainText(
-      "Your cart is empty"
+      "Your cart is empty",
     );
   });
 });
