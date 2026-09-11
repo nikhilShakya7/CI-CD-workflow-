@@ -7,7 +7,7 @@ test.describe("Products Catalog", () => {
   });
 
   test("displays all 10 products", async ({ productsPage }) => {
-    await productsPage.expectProductCount(1);
+    await productsPage.expectProductCount(10);
     await productsPage.expectSectionHeading("Products");
   });
 
