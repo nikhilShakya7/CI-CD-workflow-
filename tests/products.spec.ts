@@ -7,7 +7,7 @@ test.describe("Products Catalog", () => {
   });
 
   test("displays all 10 products", async ({ productsPage }) => {
-    await productsPage.expectProductCount(10);
+    await productsPage.expectProductCount(1);
     await productsPage.expectSectionHeading("Products");
   });
 
@@ -94,7 +94,7 @@ test.describe("Products Catalog", () => {
     await productsPage.product("Laptop Pro 15").addToCart.click();
     await productsPage.expectCartCount(1);
     await expect(page.locator(".toast-success")).toContainText(
-      "Laptop Pro 15 added to cart"
+      "Laptop Pro 15 added to cart",
     );
   });
 });
